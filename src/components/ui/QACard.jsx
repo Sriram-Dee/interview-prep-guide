@@ -16,9 +16,9 @@ export default function QACard({ item, isImportant, onToggleImportant }) {
           {diff === 'advanced' && '📕'}
           {diff === 'expert' && '📙'}
         </div>
-        <h3 style={{ display: 'flex', alignItems: 'center', flex: 1, gap: '1rem', margin: 0 }}>
-          <span style={{flex: 1}}>{item.question}</span>
-          <span className={`diff-badge diff-${diff}`}>{diff}</span>
+        <h3>{item.question}</h3>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', flexShrink: 0 }}>
+          <span className={`diff-badge diff-${diff}`} style={{ margin: 0 }}>{diff}</span>
           <button 
             className={`star-btn ${isImportant ? 'active' : ''}`}
             onClick={(e) => {
@@ -30,18 +30,19 @@ export default function QACard({ item, isImportant, onToggleImportant }) {
               background: 'none', 
               border: 'none', 
               cursor: 'pointer',
-              fontSize: '1.5rem',
+              fontSize: '1.25rem',
               color: isImportant ? 'var(--accent)' : 'var(--text-muted)',
-              padding: '0 0.5rem',
+              padding: '0',
               display: 'flex',
               alignItems: 'center',
-              justifyContent: 'center'
+              justifyContent: 'center',
+              lineHeight: 1
             }}
           >
             {isImportant ? '★' : '☆'}
           </button>
-        </h3>
-        <span className="chevron">▼</span>
+          <span className="chevron" style={{ marginLeft: '0.25rem' }}>▼</span>
+        </div>
       </div>
       <div className="qa-answer">
         <div className="qa-answer-inner">
