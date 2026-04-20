@@ -4,8 +4,8 @@ export const behavioral = [
     emoji: '🎤',
     title: '"Tell me about yourself"',
     content: '<p><strong>Structure: Present → Past → Future (60–90 seconds)</strong></p>',
-    genericScript: "I'm a Full-Stack MERN Developer with [X] years of experience. I specialize in building scalable web applications and enterprise platforms. My background involves leading end-to-end features using React on the frontend and Node.js on the backend. I'm passionate about performance optimization and creating great user experiences. I'm looking for an opportunity where I can grow as a frontend specialist and contribute to high-impact user interfaces.",
-    personalScript: "I'm Sriram, a Full-Stack MERN Developer with 3 years of experience at Hema's Enterprise. I specialize in React frontend development, building enterprise platforms like a VR eye-tracking research dashboard with real-time WebSocket sync, an AI-powered photobooth for CavinKare, and a visitor management system for Jio World Convention Centre. I'm passionate about performance optimization – for example, I reduced image payload sizes by 80% in a consumer web app. I'm now looking for an opportunity where I can grow as a React frontend specialist and contribute to building world-class user experiences.",
+    genericScript: "I'm a Full-Stack MERN Developer with over 3 years of experience building and deploying scalable web applications. My expertise lies in creating high-performance React frontends and robust Node.js backends, with a focus on real-time systems and cloud deployments.",
+    personalScript: "I'm a Full-Stack MERN Developer with 3 years of experience. I specialize in building performance-critical applications and have extensive experience in React/Node.js, real-time tracking systems, and automated deployment pipelines. I'm passionate about performance optimization – for example, I reduced image payload sizes by 80% in a consumer web app. I'm now looking for an opportunity where I can grow as a React frontend specialist and contribute to building world-class user experiences.",
   },
   {
     type: 'tip',

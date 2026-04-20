@@ -7,7 +7,6 @@ import TipCard from './components/ui/TipCard';
 import SecretModal from './components/ui/SecretModal';
 import { SECTION_META } from './constants';
 import { questionSections, behavioralData, negotiationData, getTotalQuestions } from './data';
-import { useProgress } from './hooks/useProgress';
 import { useImportant } from './hooks/useImportant';
 
 export default function App() {
@@ -15,7 +14,6 @@ export default function App() {
   const [searchTerm, setSearchTerm] = useState('');
   const [showScrollTop, setShowScrollTop] = useState(false);
   const [showSecretModal, setShowSecretModal] = useState(false);
-  const { completed, toggle, count } = useProgress();
   const { important, toggleImportant, importantCount } = useImportant();
 
   const mainWrapperRef = useRef(null);
@@ -36,14 +34,7 @@ export default function App() {
     return () => el.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Progress bar
-  useEffect(() => {
-    const bar = document.querySelector('.progress-bar');
-    if (bar) {
-      const total = getTotalQuestions();
-      bar.style.width = total ? `${(count / total) * 100}%` : '0%';
-    }
-  }, [count]);
+
 
   // Change section and scroll the main-wrapper to top
   const handleSectionChange = useCallback((id) => {
@@ -88,7 +79,6 @@ export default function App() {
   return (
     <>
       {showSecretModal && <SecretModal onClose={() => setShowSecretModal(false)} />}
-      <div className="progress-bar" />
       <div className="app-layout">
         <Sidebar
           activeSection={activeSection}
