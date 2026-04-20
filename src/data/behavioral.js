@@ -4,13 +4,15 @@ export const behavioral = [
     emoji: '🎤',
     title: '"Tell me about yourself"',
     content: '<p><strong>Structure: Present → Past → Future (60–90 seconds)</strong></p>',
-    script: "I'm Sriram, a Full-Stack MERN Developer with 3 years of experience at Hema's Enterprise. I specialize in React frontend development, building enterprise platforms like a VR eye-tracking research dashboard with real-time WebSocket sync, an AI-powered photobooth for CavinKare, and a visitor management system for Jio World Convention Centre. I'm passionate about performance optimization – for example, I reduced image payload sizes by 80% in a consumer web app. I'm now looking for an opportunity where I can grow as a React frontend specialist and contribute to building world-class user experiences.",
+    genericScript: "I'm a Full-Stack MERN Developer with [X] years of experience. I specialize in building scalable web applications and enterprise platforms. My background involves leading end-to-end features using React on the frontend and Node.js on the backend. I'm passionate about performance optimization and creating great user experiences. I'm looking for an opportunity where I can grow as a frontend specialist and contribute to high-impact user interfaces.",
+    personalScript: "I'm Sriram, a Full-Stack MERN Developer with 3 years of experience at Hema's Enterprise. I specialize in React frontend development, building enterprise platforms like a VR eye-tracking research dashboard with real-time WebSocket sync, an AI-powered photobooth for CavinKare, and a visitor management system for Jio World Convention Centre. I'm passionate about performance optimization – for example, I reduced image payload sizes by 80% in a consumer web app. I'm now looking for an opportunity where I can grow as a React frontend specialist and contribute to building world-class user experiences.",
   },
   {
     type: 'tip',
     emoji: '🚪',
     title: '"Why are you looking for a change?"',
-    script: "I've grown significantly at Hema's Enterprise – from a trainee to leading full-stack projects for clients like Jio and CavinKare. Now I'm looking for a larger team where I can specialize deeper in React frontend architecture, work with more complex UI challenges at scale, and learn from experienced engineers.",
+    genericScript: "I've had a great experience and learned a lot in my current role, taking ownership of various full-stack projects. However, I'm now looking for a challenging environment where I can specialize deeper in modern Frontend architecture, work with complex UI challenges at scale, and collaborate with a highly experienced engineering team.",
+    personalScript: "I've grown significantly at Hema's Enterprise – from a trainee to leading full-stack projects for clients like Jio and CavinKare. Now I'm looking for a larger team where I can specialize deeper in React frontend architecture, work with more complex UI challenges at scale, and learn from experienced engineers.",
     doDont: {
       do: 'Focus on growth, learning, scale, specialization',
       dont: 'Complain about current employer, salary, or manager',
@@ -20,7 +22,13 @@ export const behavioral = [
     type: 'tip',
     emoji: '💪',
     title: '"What are your greatest strengths?"',
-    items: [
+    genericItems: [
+      { bold: 'Adaptability', text: 'Quickly adapting to new tech stacks and business requirements.' },
+      { bold: 'Problem-solving', text: 'Identifying performance bottlenecks and optimizing client-side rendering.' },
+      { bold: 'Quick learner', text: 'Proactively picking up new frameworks, libraries, and integration patterns.' },
+      { bold: 'End-to-end ownership', text: 'Taking features from initial concept through UI dev, API integration, to deployment.' },
+    ],
+    personalItems: [
       { bold: 'Adaptability', text: 'Built diverse projects: VR research, AI photobooth, visitor management, consumer apps' },
       { bold: 'Problem-solving', text: 'Reduced payload 80% with client-side compression, implemented geolocation enforcement' },
       { bold: 'Quick learner', text: 'Picked up Unity WebGL, AI APIs, and WebSocket integration on the job' },
@@ -31,27 +39,30 @@ export const behavioral = [
     type: 'tip',
     emoji: '🎯',
     title: '"What is your weakness?"',
-    script: "I sometimes spend too much time optimizing code for edge cases before shipping. I've learned to balance perfectionism with delivery by setting time-boxed optimization sprints and focusing on the Pareto principle – the 20% of optimization that gives 80% of impact.",
+    genericScript: "I sometimes over-engineer solutions upfront by trying to account for every possible edge case before shipping. I've learned to balance perfectionism with iteration, focusing on delivering an MVP first and optimizing later based on actual performance metrics and user feedback.",
+    personalScript: "I sometimes spend too much time optimizing code for edge cases before shipping. I've learned to balance perfectionism with delivery by setting time-boxed optimization sprints and focusing on the Pareto principle – the 20% of optimization that gives 80% of impact.",
   },
   {
     type: 'tip',
     emoji: '🏔️',
     title: '"Describe a challenging project" (STAR Method)',
     content: '<p><strong>Use: Situation → Task → Action → Result</strong></p>',
-    script: '<strong>Situation:</strong> For the CIA Retail Analysis platform, we needed real-time sync between a React dashboard and Unity WebGL 3D environment for VR eye-tracking research.<br/><br/><strong>Task:</strong> I had to build a system where a researcher could configure a shelf environment in 3D and trigger studies on connected VR headsets, all with live data visualization.<br/><br/><strong>Action:</strong> I architected a WebSocket-based device management system using Socket.io, integrated Unity WebGL into React, and built interactive heatmap overlays with chronological gaze plots.<br/><br/><strong>Result:</strong> Delivered a fully functional research platform that enabled eye-tracking studies with per-product fixation metrics, automated CSV report exports, and multi-device synchronization.',
+    genericScript: '<strong>Situation:</strong> We needed to build a highly interactive real-time dashboard that synced with various external data streams.<br/><br/><strong>Task:</strong> I had to architect a scalable frontend that could handle rapid state updates without causing UI lag or unnecessary re-renders.<br/><br/><strong>Action:</strong> I implemented a robust WebSocket integration using custom hooks, memoized expensive components using React.memo, and decoupled fast-changing state from the heavy UI tree.<br/><br/><strong>Result:</strong> Delivered a smooth, performant dashboard capable of handling real-time data syncs efficiently, significantly improving the user experience.',
+    personalScript: '<strong>Situation:</strong> For the CIA Retail Analysis platform, we needed real-time sync between a React dashboard and Unity WebGL 3D environment for VR eye-tracking research.<br/><br/><strong>Task:</strong> I had to build a system where a researcher could configure a shelf environment in 3D and trigger studies on connected VR headsets, all with live data visualization.<br/><br/><strong>Action:</strong> I architected a WebSocket-based device management system using Socket.io, integrated Unity WebGL into React, and built interactive heatmap overlays with chronological gaze plots.<br/><br/><strong>Result:</strong> Delivered a fully functional research platform that enabled eye-tracking studies with per-product fixation metrics, automated CSV report exports, and multi-device synchronization.',
   },
   {
     type: 'tip',
     emoji: '🔮',
     title: '"Where do you see yourself in 5 years?"',
-    script: "In 5 years, I see myself as a senior frontend engineer or tech lead, mentoring junior developers, contributing to open-source React ecosystem, and driving architecture decisions for complex applications. I want to deepen my expertise in performance optimization, accessibility, and design systems.",
+    genericScript: "In 5 years, I see myself as a senior frontend engineer or tech lead, mentoring junior developers, and driving architecture decisions for complex web applications. I aim to deepen my expertise in performance optimization, large-scale design systems, and modern web standards.",
+    personalScript: "In 5 years, I see myself as a senior frontend engineer or tech lead, mentoring junior developers, contributing to open-source React ecosystem, and driving architecture decisions for complex applications. I want to deepen my expertise in performance optimization, accessibility, and design systems.",
   },
   {
     type: 'tip',
     emoji: '🏢',
     title: '"Why do you want to work here?"',
     content: '<p><strong>Research the company beforehand. Template:</strong></p>',
-    items: [
+    genericItems: [
       { bold: '', text: "I'm impressed by [specific product/feature] you've built" },
       { bold: '', text: 'Your tech stack [React/Next.js] aligns perfectly with my expertise' },
       { bold: '', text: 'The scale of [user base/data] would challenge me to grow' },
@@ -89,7 +100,8 @@ export const negotiation = [
     type: 'tip',
     emoji: '📊',
     title: '"What is your expected salary?"',
-    script: "Based on my 3 years of experience, the skills I bring – React, Node.js, real-time systems, Docker deployments – and looking at market rates for similar roles, I'm expecting somewhere in the range of ₹X to ₹Y LPA. But I'm also interested in the overall package including growth opportunities, work culture, and benefits.",
+    genericScript: "Based on my experience, the skills I bring, and looking at market rates for similar roles, I'm expecting somewhere in the range of ₹X to ₹Y LPA. But I'm also interested in the overall package including growth opportunities, work culture, and benefits.",
+    personalScript: "Based on my 3 years of experience, the skills I bring – React, Node.js, real-time systems, Docker deployments – and looking at market rates for similar roles, I'm expecting somewhere in the range of ₹X to ₹Y LPA. But I'm also interested in the overall package including growth opportunities, work culture, and benefits.",
     items: [
       { bold: '', text: 'For 3 years MERN experience in India (2026): research ranges on Glassdoor/AmbitionBox' },
       { bold: '', text: 'Always quote 20-30% higher than your minimum acceptable' },
@@ -116,7 +128,8 @@ export const negotiation = [
       { bold: 'When you receive an offer:', text: 'Thank them, ask for the offer in writing, request 2-3 days to review' },
       { bold: 'Counter template:', text: '' },
     ],
-    script: 'Thank you for the offer of ₹X LPA. I\'m very excited about this opportunity. After reviewing the role requirements and market benchmarks, I was hoping we could explore ₹Y LPA. This reflects my [specific value: years of experience, niche skills like WebSocket/VR integration, immediate productivity].',
+    genericScript: "Thank you for the offer of ₹X LPA. I'm very excited about this opportunity. After reviewing the role requirements and market benchmarks, I was hoping we could explore ₹Y LPA. This reflects my [specific value: years of experience, niche skills, immediate productivity].",
+    personalScript: "Thank you for the offer of ₹X LPA. I'm very excited about this opportunity. After reviewing the role requirements and market benchmarks, I was hoping we could explore ₹Y LPA. This reflects my [specific value: years of experience, niche skills like WebSocket/VR integration, immediate productivity].",
     doDont: {
       do: "Counter once with justification. Be enthusiastic about the role. Show you've done research.",
       dont: "Counter more than twice. Use other offers as leverage unless you genuinely have them. Be aggressive.",

@@ -1,19 +1,28 @@
+import { useState } from 'react';
 import { getTotalQuestions } from '../../data';
 
-export default function Hero({ completedCount }) {
+export default function Hero() {
   const total = getTotalQuestions();
-  const pct = total ? Math.round((completedCount / total) * 100) : 0;
+  const [clickCount, setClickCount] = useState(0);
+
+  const handleTitleClick = () => {
+    const newCount = clickCount + 1;
+    setClickCount(newCount);
+    setTimeout(() => setClickCount(0), 2000);
+
+    if (newCount >= 5) {
+      setClickCount(0);
+      window.dispatchEvent(new Event('openSecretModal'));
+    }
+  };
 
   return (
     <section className="hero">
-      <div className="hero-badge">
-        <span className="pulse" />
-        MERN Interview Prep 2026
-      </div>
-      <h1>Interview Preparation Guide</h1>
+      <h1 onClick={handleTitleClick} style={{ userSelect: 'none' }}>
+        MERN Stack <span>Interview Guide</span>
+      </h1>
       <p className="subtitle">
-        Comprehensive MERN Stack interview guide with {total}+ questions
-        covering React, Node.js, Express, MongoDB, WebSocket & more
+        A comprehensive collection of {total}+ curated interview questions mainly focused on React and modern Frontend architecture, alongside essential Node.js and MongoDB concepts.
       </p>
       <div className="hero-stats">
         <div className="hero-stat">
@@ -23,14 +32,6 @@ export default function Hero({ completedCount }) {
         <div className="hero-stat">
           <div className="num">13</div>
           <div className="label">Topics</div>
-        </div>
-        <div className="hero-stat">
-          <div className="num">{completedCount}</div>
-          <div className="label">Completed</div>
-        </div>
-        <div className="hero-stat">
-          <div className="num">{pct}%</div>
-          <div className="label">Progress</div>
         </div>
       </div>
     </section>

@@ -1,9 +1,10 @@
-import { useState, useMemo, useCallback, useEffect } from 'react';
+import { useState, useMemo, useCallback, useEffect, useRef } from 'react';
 import Hero from './components/layout/Hero';
 import Sidebar from './components/layout/Sidebar';
 import MobileNav from './components/layout/MobileNav';
 import QACard from './components/ui/QACard';
 import TipCard from './components/ui/TipCard';
+import SecretModal from './components/ui/SecretModal';
 import { SECTION_META } from './constants';
 import { questionSections, behavioralData, negotiationData, getTotalQuestions } from './data';
 import { useProgress } from './hooks/useProgress';
@@ -13,14 +14,26 @@ export default function App() {
   const [activeSection, setActiveSection] = useState('react-basics');
   const [searchTerm, setSearchTerm] = useState('');
   const [showScrollTop, setShowScrollTop] = useState(false);
+  const [showSecretModal, setShowSecretModal] = useState(false);
   const { completed, toggle, count } = useProgress();
   const { important, toggleImportant, importantCount } = useImportant();
 
-  // Scroll-to-top button visibility
+  const mainWrapperRef = useRef(null);
+
+  // Listen for the secret modal trigger
   useEffect(() => {
-    const handleScroll = () => setShowScrollTop(window.scrollY > 400);
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => window.removeEventListener('scroll', handleScroll);
+    const handler = () => setShowSecretModal(true);
+    window.addEventListener('openSecretModal', handler);
+    return () => window.removeEventListener('openSecretModal', handler);
+  }, []);
+
+  // Scroll-to-top button visibility — track the main-wrapper scroll
+  useEffect(() => {
+    const el = mainWrapperRef.current;
+    if (!el) return;
+    const handleScroll = () => setShowScrollTop(el.scrollTop > 400);
+    el.addEventListener('scroll', handleScroll, { passive: true });
+    return () => el.removeEventListener('scroll', handleScroll);
   }, []);
 
   // Progress bar
@@ -32,10 +45,10 @@ export default function App() {
     }
   }, [count]);
 
-  // Change section and scroll up
+  // Change section and scroll the main-wrapper to top
   const handleSectionChange = useCallback((id) => {
     setActiveSection(id);
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    mainWrapperRef.current?.scrollTo({ top: 0, behavior: 'smooth' });
   }, []);
 
   // Calculate search-filtered items
@@ -74,9 +87,8 @@ export default function App() {
 
   return (
     <>
+      {showSecretModal && <SecretModal onClose={() => setShowSecretModal(false)} />}
       <div className="progress-bar" />
-      <Hero completedCount={count} />
-      <MobileNav activeSection={activeSection} onSectionChange={handleSectionChange} />
       <div className="app-layout">
         <Sidebar
           activeSection={activeSection}
@@ -85,8 +97,11 @@ export default function App() {
           onSearchChange={setSearchTerm}
           importantCount={importantCount}
         />
-        <main className="main-content">
-          {/* Search Results */}
+        <div className="main-wrapper" ref={mainWrapperRef}>
+          <Hero />
+          <MobileNav activeSection={activeSection} onSectionChange={handleSectionChange} />
+          <main className="main-content">
+            {/* Search Results */}
           {filteredQuestions ? (
             <div>
               <div className="section-head">
@@ -182,17 +197,18 @@ export default function App() {
               )}
             </>
           )}
-        </main>
-      </div>
+          </main>
 
-      {/* Scroll to top button */}
-      <button
-        className={`scroll-top${showScrollTop ? ' visible' : ''}`}
-        onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-        aria-label="Scroll to top"
-      >
-        ↑
-      </button>
+          {/* Scroll to top button */}
+          <button
+            className={`scroll-top${showScrollTop ? ' visible' : ''}`}
+            onClick={() => mainWrapperRef.current?.scrollTo({ top: 0, behavior: 'smooth' })}
+            aria-label="Scroll to top"
+          >
+            ↑
+          </button>
+        </div>
+      </div>
     </>
   );
 }

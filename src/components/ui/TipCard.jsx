@@ -1,4 +1,13 @@
+import { usePersonalMode } from '../../context/PersonalModeContext';
+
 export default function TipCard({ item }) {
+  const { isPersonalMode } = usePersonalMode();
+
+  // Choose content based on mode
+  const currentScript = (isPersonalMode && item.personalScript) ? item.personalScript : item.genericScript || item.script;
+  const currentSecondScript = (isPersonalMode && item.personalSecondScript) ? item.personalSecondScript : item.genericSecondScript || item.secondScript;
+  const currentItems = (isPersonalMode && item.personalItems) ? item.personalItems : item.genericItems || item.items;
+
   return (
     <div className="tip-card">
       <h3>
@@ -8,17 +17,17 @@ export default function TipCard({ item }) {
 
       {item.content && <div dangerouslySetInnerHTML={{ __html: item.content }} />}
 
-      {item.script && (
-        <div className="script-box" dangerouslySetInnerHTML={{ __html: item.script }} />
+      {currentScript && (
+        <div className="script-box" dangerouslySetInnerHTML={{ __html: currentScript }} />
       )}
 
-      {item.secondScript && (
-        <div className="script-box" style={{ marginTop: '0.5rem' }} dangerouslySetInnerHTML={{ __html: item.secondScript }} />
+      {currentSecondScript && (
+        <div className="script-box" style={{ marginTop: '0.5rem' }} dangerouslySetInnerHTML={{ __html: currentSecondScript }} />
       )}
 
-      {item.items && (
+      {currentItems && (
         <ul>
-          {item.items.map((it, i) => (
+          {currentItems.map((it, i) => (
             <li key={i}>
               {it.bold && <strong>{it.bold}</strong>}
               {it.bold && it.text ? ' – ' : ''}
