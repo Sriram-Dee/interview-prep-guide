@@ -12,7 +12,6 @@ A comprehensive, dark-themed, and highly optimized interview preparation dashboa
   - MongoDB (Commands, Database CLI, Aggregation).
   - WebSockets & Advanced System Design.
 - **Modern UI/UX**: Fast, responsive, premium dark-mode focused UI with accessible code blocks, colored difficulty badges, and clean typography.
-- **Progress Tracking**: Tracks visual progress via complete/incomplete question toggling saved to browser LocalStorage.
 - **Intelligent Global Search**: Instant, fuzzy-search functionality across all available questions and topics.
 
 ## 🛠️ Tech Stack
