@@ -21,7 +21,8 @@ function App() {
 }
 
 createRoot(document.getElementById('root')).render(<App />);`,
-    tip: 'Mention your 3 years of MERN experience and how React\'s component model helped you build the CIA Retail Analysis dashboard with reusable chart components.',
+    tip: 'In interviews, emphasize the shift from imperative (DOM manipulation) to declarative (state-driven) UI.',
+    personalTip: "Mention your 3 years of MERN experience and how React's component model helped you build the CIA Retail Analysis dashboard with reusable chart components.",
   },
   {
     id: 'rb2',
@@ -94,7 +95,7 @@ function Counter() {
 function Welcome({ name }) {
   return <h1>Hello, {name}!</h1>;
 }
-// <Welcome name="Sriram" />  ← parent controls this
+// <Welcome name="John Doe" />  ← parent controls this
 
 // State – component's own mutable data
 function Counter() {

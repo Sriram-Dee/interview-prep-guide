@@ -21,7 +21,8 @@ const server = http.createServer((req, res) => {
 server.listen(3000, () => {
   console.log('Server running on port 3000');
 });`,
-    tip: 'Mention that Node.js is ideal for I/O-heavy apps but NOT for CPU-intensive tasks. Your MERN stack experience shows you understand when to use it.',
+    tip: 'Mention that Node.js is ideal for I/O-heavy apps but NOT for CPU-intensive tasks.',
+    personalTip: 'Your MERN stack experience shows you understand exactly when to swap heavy processing to a Worker Thread or a separate service.',
   },
   {
     id: 'nd2',

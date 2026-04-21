@@ -101,11 +101,11 @@ const value = inputValue || 'default';`,
     simple: '"this" depends on HOW a function is called, not where it\'s defined. Arrow functions DON\'T have their own "this" – they inherit from the enclosing scope. This is why React uses arrow functions for event handlers.',
     code: `// Regular function: \`this\` depends on caller
 const obj = {
-  name: 'Sriram',
-  greet: function() { console.log(this.name); }, // 'Sriram'
+  name: 'John Doe',
+  greet: function() { console.log(this.name); }, // 'John Doe'
   greetLater: function() {
     setTimeout(function() { console.log(this.name); }, 100); // undefined!
-    setTimeout(() => console.log(this.name), 100); // 'Sriram' (arrow)
+    setTimeout(() => console.log(this.name), 100); // 'John Doe' (arrow)
   }
 };
 
@@ -134,8 +134,8 @@ const z = 5;
 // z = 6; // ❌ TypeError
 
 // But objects/arrays CAN be mutated
-const user = { name: 'Sriram' };
-user.name = 'Ram'; // ✅ Works (mutation, not reassignment)
+const user = { name: 'John Doe' };
+user.name = 'John'; // ✅ Works (mutation, not reassignment)
 
 // Loop scope difference
 for (var i = 0; i < 3; i++) {
@@ -178,7 +178,7 @@ Object.getPrototypeOf(dog) === Animal.prototype; // true`,
     difficulty: 'intermediate',
     simple: 'Shallow copy copies only the first level – nested objects still reference the same memory. Deep copy creates completely independent copies. This is critical in React state management.',
     code: `// Shallow copy methods
-const original = { name: 'Sriram', address: { city: 'Chennai' } };
+const original = { name: 'John Doe', address: { city: 'London' } };
 const shallow1 = { ...original };
 const shallow2 = Object.assign({}, original);
 

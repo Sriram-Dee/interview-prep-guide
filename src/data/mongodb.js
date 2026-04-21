@@ -17,17 +17,17 @@ const mongodb = [
     },
     code: `// SQL table row
 // | id | name   | email          | age |
-// | 1  | Sriram | sri@mail.com   | 25  |
+// | 1  | John   | john@mail.com  | 25  |
 
 // MongoDB document
 {
   "_id": ObjectId("507f1f77bcf86cd799439011"),
-  "name": "Sriram",
-  "email": "sri@mail.com",
+  "name": "John Doe",
+  "email": "john@example.com",
   "age": 25,
   "address": {           // Nested object (no JOIN needed!)
-    "city": "Chennai",
-    "state": "Tamil Nadu"
+    "city": "Tech City",
+    "state": "California"
   },
   "skills": ["React", "Node.js", "MongoDB"] // Arrays supported
 }`,
@@ -51,13 +51,13 @@ const userSchema = new mongoose.Schema({
 const User = mongoose.model('User', userSchema);
 
 // CREATE
-const user = await User.create({ name: 'Sriram', email: 'sri@mail.com' });
+const user = await User.create({ name: 'John Doe', email: 'john@example.com' });
 
 // READ
 const allUsers = await User.find();
 const admins = await User.find({ role: 'admin' });
 const oneUser = await User.findById(id);
-const userByEmail = await User.findOne({ email: 'sri@mail.com' });
+const userByEmail = await User.findOne({ email: 'john@example.com' });
 
 // UPDATE
 await User.findByIdAndUpdate(id, { name: 'Ram' }, { new: true, runValidators: true });
@@ -112,7 +112,7 @@ const postSchema = new Schema({
 
 // Populate (like SQL JOIN)
 const post = await Post.findById(id).populate('author', 'name email');
-// { title: '...', author: { name: 'Sriram', email: '...' } }
+// { title: '...', author: { name: 'John Doe', email: '...' } }
 
 // Virtual populate (User → Posts without storing post IDs)
 userSchema.virtual('posts', {
@@ -209,7 +209,7 @@ console.log(explained.executionStats.executionStages.stage); // 'IXSCAN' = good!
 
 // Covered query – index has ALL needed fields
 // The query never touches documents, only the index!
-await User.find({ email: 'sri@mail.com' })
+await User.find({ email: 'john@example.com' })
   .select('email name -_id'); // All fields in the index`,
     tip: 'ESR Rule for compound indexes: fields used in Equality first, then Sort, then Range. This maximizes index efficiency.',
   },
@@ -381,7 +381,8 @@ sh.shardCollection('mydb.orders', { customerId: 'hashed' });
 
 // Connection string for replica set
 // mongodb://host1:27017,host2:27017,host3:27017/mydb?replicaSet=rs0`,
-    tip: 'Most Chennai-based companies use MongoDB Atlas (managed service). You don\'t set up sharding manually, but understanding the concept is important for interviews.',
+    tip: 'Most modern production environments use a managed database-as-a-service (like MongoDB Atlas). Understanding sharding concepts is critical for architecting large-scale systems.',
+    personalTip: 'Most Chennai-based companies use MongoDB Atlas (managed service). You don\'t set up sharding manually, but understanding the concept is important for interviews.',
   },
   {
     id: 'mg10',
@@ -396,8 +397,8 @@ await User.find({ role: { $ne: 'banned' } });         // NOT banned
 // Logical operators
 await User.find({
   $or: [
-    { email: 'sri@mail.com' },
-    { name: 'Sriram' }
+    { email: 'john@example.com' },
+    { name: 'John Doe' }
   ]
 });
 

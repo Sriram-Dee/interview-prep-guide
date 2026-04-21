@@ -1,7 +1,9 @@
 import { useState, useCallback } from 'react';
 import { CodeBlock, ComparisonTable } from './CodeBlock';
+import { usePersonalMode } from '../../context/PersonalModeContext';
 
 export default function QACard({ item, isImportant, onToggleImportant }) {
+  const { isPersonalMode } = usePersonalMode();
   const [open, setOpen] = useState(false);
   const toggle = useCallback(() => setOpen(o => !o), []);
 
@@ -77,7 +79,30 @@ export default function QACard({ item, isImportant, onToggleImportant }) {
 
           {item.code && <CodeBlock code={item.code} />}
 
+          {/* Public Tip */}
           {item.tip && <div className="tip-box">{item.tip}</div>}
+
+          {/* Personal Hidden Tip (only visible in Personal Mode) */}
+          {isPersonalMode && item.personalTip && (
+            <div className="personal-tip-box" style={{ 
+              background: 'rgba(56, 189, 248, 0.1)', 
+              border: '1px dashed var(--accent)', 
+              padding: '0.75rem', 
+              borderRadius: '8px', 
+              marginTop: '1rem', 
+              color: 'var(--accent)', 
+              fontSize: '0.9rem',
+              display: 'flex',
+              gap: '0.5rem',
+              alignItems: 'flex-start'
+            }}>
+              <span style={{ fontSize: '1.1rem' }}>💡</span>
+              <div>
+                <strong style={{ display: 'block', marginBottom: '0.25rem', color: 'var(--accent-light)' }}>Personal Strategy:</strong>
+                {item.personalTip}
+              </div>
+            </div>
+          )}
 
           {item.warning && <div className="warning-box">{item.warning}</div>}
         </div>

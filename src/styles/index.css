@@ -891,3 +891,37 @@ pre code { background: none; border: none; padding: 0; color: inherit; font-size
   background: var(--accent-light);
   border-color: var(--accent-light);
 }
+
+/* Ghost Mode Badge */
+.ghost-badge {
+  font-size: 0.7rem;
+  background: rgba(99, 102, 241, 0.1);
+  padding: 0.3rem 0.7rem;
+  border-radius: 20px;
+  border: 1px solid rgba(99, 102, 241, 0.3);
+  backdrop-filter: blur(5px);
+  color: var(--accent-light);
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  animation: ghost-pulse 2s infinite;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.btn-lock {
+  background: var(--rose-dim) !important;
+  color: var(--rose) !important;
+  border-color: rgba(244, 63, 94, 0.2) !important;
+}
+.btn-lock:hover {
+  background: var(--rose) !important;
+  color: white !important;
+}
+
+@keyframes ghost-pulse {
+  0% { box-shadow: 0 0 0 0 rgba(99, 102, 241, 0.4); }
+  70% { box-shadow: 0 0 0 8px rgba(99, 102, 241, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(99, 102, 241, 0); }
+}

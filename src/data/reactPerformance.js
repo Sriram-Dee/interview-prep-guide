@@ -42,7 +42,8 @@ function VirtualList({ items }) {
   );
 }
 // 10,000 items but only ~10 DOM nodes at any time!`,
-    tip: 'In the CIA dashboard, you displayed eye-tracking data with hundreds of data points – virtualization would be relevant here. Mention it!',
+    tip: 'When dealing with hundreds of live data points, virtualization ensures smooth performance by minimizing the number of DOM nodes.',
+    personalTip: 'In the CIA dashboard, you displayed eye-tracking data with hundreds of data points – virtualization would be relevant here. Mention it!',
   },
   {
     id: 'rpf3',

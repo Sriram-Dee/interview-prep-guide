@@ -33,7 +33,7 @@ db.stats()`,
     difficulty: 'intermediate',
     simple: 'How to create, read, update, and delete documents using the shell JavaScript interface. mongosh intelligently formats output.',
     code: `// INSERT
-db.users.insertOne({ name: "Sriram", role: "developer", age: 25 })
+db.users.insertOne({ name: "John Doe", role: "developer", age: 25 })
 db.users.insertMany([
   { name: "John", role: "admin" },
   { name: "Jane", role: "user" }
@@ -42,10 +42,10 @@ db.users.insertMany([
 // READ
 db.users.find()                      // Get multiple documents
 db.users.find({ age: { $gt: 21 } })  // Query with operators
-db.users.findOne({ name: "Sriram" }) // Get single document
+db.users.findOne({ name: "John Doe" }) // Get single document
 
 // UPDATE
-db.users.updateOne({ name: "Sriram" }, { $set: { role: "lead" } })
+db.users.updateOne({ name: "John Doe" }, { $set: { role: "lead" } })
 db.users.updateMany({}, { $inc: { loginCount: 1 } })
 
 // DELETE

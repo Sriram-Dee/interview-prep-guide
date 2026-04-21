@@ -42,7 +42,7 @@ setCount(prev => prev + 1); // ✅ Always use this pattern
 
 // Object state – MUST spread
 const [user, setUser] = useState({ name: '', email: '' });
-setUser(prev => ({ ...prev, name: 'Sriram' }));
+setUser(prev => ({ ...prev, name: 'John Doe' }));
 
 // Lazy initialization (expensive computation only runs once)
 const [data, setData] = useState(() => {
@@ -253,7 +253,8 @@ function UserList() {
   if (error) return <Error msg={error.message} />;
   return data.map(u => <UserCard key={u.id} user={u} />);
 }`,
-    tip: 'In your CIA Retail Analysis project, you used custom hooks for WebSocket connection management and heatmap data processing – mention this as a real-world custom hook example.',
+    tip: 'When explaining custom hooks, focus on the "separation of concerns" – keeping UI separate from complex logic.',
+    personalTip: 'In your CIA Retail Analysis project, you used custom hooks for WebSocket connection management and heatmap data processing – mention this as a real-world custom hook example.',
   },
 ];
 

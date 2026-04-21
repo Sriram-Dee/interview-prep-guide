@@ -136,7 +136,7 @@ const socket = io('http://localhost:3000', {
 });
 
 socket.on('connect', () => console.log('Connected!'));
-socket.emit('chat:message', { text: 'Hello!', user: 'Sriram' });
+socket.emit('chat:message', { text: 'Hello!', user: 'John Doe' });
 socket.on('chat:message', (data) => setMessages(prev => [...prev, data]));`,
   },
   {
@@ -328,7 +328,8 @@ io.emit('announcement', 'This reaches everyone!');
 //     proxy_set_header Connection "upgrade";
 //   }
 // }`,
-    tip: 'In your CIA project, if you had multiple WebSocket servers, you\'d use Redis adapter. This is a common follow-up question.',
+    tip: 'In a distributed system with multiple WebSocket servers, a Redis adapter is essential to ensure messages reach clients connected across different server instances.',
+    personalTip: 'In your CIA project, if you had multiple WebSocket servers, you\'d use Redis adapter. This is a common follow-up question.',
   },
   {
     id: 'ws8',
@@ -439,7 +440,8 @@ function ChatRoom({ roomId }) {
     </div>
   );
 }`,
-    tip: 'In your CIA project you built WebSocket-based device management with Socket.IO – describe this architecture when asked about real-time systems.',
+    tip: 'When building real-time device management systems, using custom Socket.IO hooks can help maintain clean, modular, and testable React components.',
+    personalTip: 'In the CIA project, I architected a WebSocket-based device management system using Socket.IO – this is a great example of real-time systems implementation.',
   },
   {
     id: 'ws10',

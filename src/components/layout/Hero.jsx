@@ -1,9 +1,11 @@
 import { useState } from 'react';
+import { usePersonalMode } from '../../context/PersonalModeContext';
 import { getTotalQuestions } from '../../data';
 
 export default function Hero() {
   const total = getTotalQuestions();
   const [clickCount, setClickCount] = useState(0);
+  const { isPersonalMode } = usePersonalMode();
 
   const handleTitleClick = () => {
     const newCount = clickCount + 1;
@@ -18,8 +20,13 @@ export default function Hero() {
 
   return (
     <section className="hero">
-      <h1 onClick={handleTitleClick} style={{ userSelect: 'none' }}>
+      <h1 onClick={handleTitleClick} style={{ userSelect: 'none', display: 'flex', alignItems: 'center', gap: '1rem', flexWrap: 'wrap' }}>
         MERN Stack <span>Interview Guide</span>
+        {isPersonalMode && (
+          <span className="ghost-badge">
+            <span role="img" aria-label="ghost">👻</span> Ghost Mode Active
+          </span>
+        )}
       </h1>
       <p className="subtitle">
         A comprehensive collection of {total}+ curated interview questions mainly focused on React and modern Frontend architecture, alongside essential Node.js and MongoDB concepts.

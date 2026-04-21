@@ -176,13 +176,13 @@ return {
     ...state.user,
     address: {
       ...state.user.address,
-      city: 'Chennai'
+      city: 'London'
     }
   }
 };
 
 // With Immer (inside RTK createSlice) — clean!
-state.user.address.city = 'Chennai'; // Immer handles the immutable update`,
+state.user.address.city = 'London'; // Immer handles the immutable update`,
     points: [
       { bold: 'Cleaner code', text: 'Write direct mutations instead of deep spread operators' },
       { bold: 'Less error-prone', text: 'No risk of forgetting to spread a nested level' },

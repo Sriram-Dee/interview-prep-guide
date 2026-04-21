@@ -410,7 +410,7 @@ if (process.env.NODE_ENV === 'production') {
       rows: [
         ['Path params', '/users/:id', 'Identify specific resource', 'GET /users/123'],
         ['Query params', '?key=value', 'Filter, sort, paginate', 'GET /users?role=admin&page=2'],
-        ['Body', 'req.body', 'Send data (POST/PUT/PATCH)', 'POST /users { name: "Sriram" }'],
+        ['Body', 'req.body', 'Send data (POST/PUT/PATCH)', 'POST /users { name: "John Doe" }'],
         ['Headers', 'req.headers', 'Auth tokens, content type', 'Authorization: Bearer token'],
       ],
     },
@@ -647,7 +647,8 @@ fastify.get('/api/users', {
 router.get('/api/users', async (ctx) => {
   ctx.body = await getUsers();
 });`,
-    tip: 'In Chennai interviews, Express is still the most asked. But mentioning Fastify/NestJS knowledge shows you stay updated with the ecosystem.',
+    tip: 'Mentioning Fastify or NestJS knowledge shows you stay updated with the modern Node.js ecosystem beyond just Express.',
+    personalTip: 'In Chennai interviews, Express is still the most asked. But mentioning Fastify/NestJS knowledge shows you stay updated with the ecosystem.',
   },
   {
     id: 'ex16',
