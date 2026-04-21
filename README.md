@@ -1,13 +1,13 @@
-# React & MERN Stack Interview Prep Guide 🚀
-
-A comprehensive, dark-themed, and highly optimized interview preparation dashboard built with React and Vite. This application is designed specifically for Frontend and Full-Stack (MERN) Developers to master core concepts, architecture patterns, and system design optimizations.
+A comprehensive, dark-themed, and highly optimized interview preparation dashboard with **150+ curated questions** built with React and Vite. This application is designed specifically for Frontend and Full-Stack (MERN) Developers to master core concepts, architecture patterns, and system design optimizations.
 
 ## 🌟 Features
 
 - **Personalized "My Prep" Dashboard**: Mark crucial questions as important/starred to revisit them easily before interviews.
-- **Hidden "Ghost Mode"**: Publicly shareable Behavioral & HR section with generic answers, and also secured hidden DOB password lock to reveal my personalized answers.
+- **Hidden "Personalized Mode"**: Publicly shareable Behavioral & HR section with generic answers, and a secured hidden password lock to reveal my own project-specific answers.
 - **Deep-Dive Concepts**:
-  - React Core (Hooks, Reconciliation, Advanced Patterns).
+  - React Core (Hooks, Reconciliation, Advanced Patterns, **Memory Leaks**).
+  - Architecture & State (**Redux Toolkit**, **RTK Query**, **Patterns**).
+  - Real-world Engineering Scenarios (XSS, Form Scaling, Dark Mode, Caching).
   - Node.js & Express.js (Middleware, Authentication, Routing).
   - MongoDB (Commands, Database CLI, Aggregation).
   - WebSockets & Advanced System Design.

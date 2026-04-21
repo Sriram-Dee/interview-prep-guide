@@ -11,6 +11,9 @@ import websocket from './websocket';
 import jsFundamentals from './jsFundamentals';
 import mongoShell from './mongoShell';
 import { behavioral, negotiation } from './behavioral';
+import redux from './redux';
+import reactMemoryLeaks from './reactMemoryLeaks';
+import scenarioBased from './scenarioBased';
 
 export const questionSections = {
   'react-basics': reactBasics,
@@ -25,6 +28,9 @@ export const questionSections = {
   'mongo-shell': mongoShell,
   'websocket': websocket,
   'js-fundamentals': jsFundamentals,
+  'redux-rtk': redux,
+  'react-memory-leaks': reactMemoryLeaks,
+  'react-scenarios': scenarioBased,
 };
 
 export const behavioralData = behavioral;

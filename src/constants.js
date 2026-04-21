@@ -11,6 +11,7 @@ export const SECTIONS = [
       { id: 'react-basics', label: 'Basics', icon: '🌱', countId: 'count-basics' },
       { id: 'react-hooks', label: 'Hooks Deep Dive', icon: '🪝', countId: 'count-hooks' },
       { id: 'react-advanced', label: 'Advanced Concepts', icon: '🚀', countId: 'count-advanced' },
+      { id: 'react-memory-leaks', label: 'Memory Leaks', icon: '💧', countId: 'count-memory' },
     ],
   },
   {
@@ -18,6 +19,8 @@ export const SECTIONS = [
     items: [
       { id: 'react-patterns', label: 'Patterns & Design', icon: '🏗️', countId: 'count-patterns' },
       { id: 'react-perf', label: 'Performance', icon: '⚡', countId: 'count-perf' },
+      { id: 'redux-rtk', label: 'Redux & State', icon: '⚛️', countId: 'count-redux' },
+      { id: 'react-scenarios', label: 'Real-world Scenarios', icon: '🛠️', countId: 'count-scenarios' },
       { id: 'react-ecosystem', label: 'Ecosystem & Tools', icon: '🌐', countId: 'count-ecosystem' },
     ],
   },
@@ -46,8 +49,11 @@ export const SECTION_META = {
   'react-basics': { overline: 'React Core · Fundamentals', title: 'React Basics', description: 'Foundation concepts every React developer must know – the building blocks of everything else' },
   'react-hooks': { overline: 'React Core · Hooks', title: 'Hooks Deep Dive', description: 'Master every React hook – from useState to custom hooks, with real-world patterns' },
   'react-advanced': { overline: 'React Core · Advanced', title: 'Advanced React Concepts', description: 'Reconciliation, Fiber, Concurrent Mode, Server Components & more' },
+  'react-memory-leaks': { overline: 'React Core · Debugging', title: 'Memory Leaks & Cleanup', description: 'Preventing memory leaks, understanding the garbage collector, and cleaning up async operations' },
   'react-patterns': { overline: 'Architecture · Patterns', title: 'React Patterns & Design', description: 'Component patterns, state management architecture & design decisions' },
   'react-perf': { overline: 'Architecture · Performance', title: 'Performance Optimization', description: 'Rendering optimization, profiling, code splitting & production-grade techniques' },
+  'redux-rtk': { overline: 'Architecture · State', title: 'Redux & Redux Toolkit', description: 'Modern state management with RTK, Thunk, Saga, Immer & RTK Query' },
+  'react-scenarios': { overline: 'Architecture · Real World', title: 'Scenario-Based Questions', description: 'Solving real engineering challenges: XSS, complex forms, dark mode, and bundle optimization' },
   'react-ecosystem': { overline: 'Architecture · Ecosystem', title: 'React Ecosystem & Tools', description: 'React Router, Redux, Testing, Next.js, data fetching & the MERN stack' },
   'nodejs': { overline: 'Backend · Runtime', title: 'Node.js Interview Questions', description: 'Event Loop, Streams, Cluster, Worker Threads, modules & production Node.js' },
   'expressjs': { overline: 'Backend · Framework', title: 'Express.js Interview Questions', description: 'Middleware, routing, REST API design, authentication, security & best practices' },
